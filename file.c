@@ -1,5 +1,33 @@
 #include <stdio.h>
-int inputScore(){
+
+int inputQuiz(){
+     int quiz;
+        printf("Enter your quiz score : ");
+        scanf("%d", &quiz);
+        return quiz;
+}
+
+int inputExam(){
+     int exam;
+        printf("Enter your quiz score : ");
+        scanf("%d", &exam);
+        return exam;
+}
+
+
+int letterGrade(double result){
+     if(result<=100 && result>=90){
+        printf("Letter Grade: A\n");
+    }else if(result >=80){
+        printf("Letter Grade: B\n");
+    }else if(result >=70){
+        printf("Letter Grade: C\n");
+    }else if(result >=60){
+        printf("Letter Grade: D\n");
+    }else{
+        printf("Letter Grade: F\n");
+    }
+    return result;
 }
 
 double calculateFinalgrade(double quiz, double exam){
@@ -7,47 +35,17 @@ double calculateFinalgrade(double quiz, double exam){
     printf("Quiz Score: %.2lf\n", quiz);
     printf("Exam Score: %.2lf\n", exam);
     printf("Final Grade: %.2lf\n", result);
-    if(result<=100 && result>=90){
-        printf("Letter Grade: A");
-    }else if(result <= 89 || result >=80){
-        printf("Letter Grade: B");
-    }else if(result <= 79 && result >=70){
-        printf("Letter Grade: C");
-    }else if(result <= 69 || result >=60){
-        printf("Letter Grade: D");
-    }else{
-        printf("Letter Grade: f");
-    }
+    letterGrade(result);
     return result;
-}
-
-int inputQuiz(){
-     int quiz;
-    printf("Enter your quiz score : ");
-    scanf("%d", &quiz);
-return quiz;
-    
-}
-
-int letterGrade(){
-   
 }
 
 
 int main() {
-    int quiz, exam;
-    quiz = inputQuiz
-    printf("Enter your quiz score : ");
-    scanf("%d", &quiz);
-   
-    printf("Enter your exam score : ");
-    scanf("%d", &exam);
     
+    int quiz = inputQuiz();
+    int exam = inputExam();
+
     calculateFinalgrade(quiz,exam);
-    
-    
-        
-        
     
 
     return 0;
